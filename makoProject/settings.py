@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djangomako',
+    'makoApp',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +66,13 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+    },
+    {
+        'BACKEND': 'djangomako.backends.MakoBackend',
+        'NAME': 'mako',
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
     },
 ]
 
